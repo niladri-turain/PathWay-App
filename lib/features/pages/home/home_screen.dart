@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/constant/app_size.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,9 +11,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(child: Scaffold(
-      body: Center(child: Text("Home Screen")),
-    )
+    return Scaffold(
+      body: Center(
+        child: Text(
+          "Home Screen",
+          style: TextStyle(fontSize: AppSize.height(0.03)),
+        ),
+      ),
     );
   }
 }
