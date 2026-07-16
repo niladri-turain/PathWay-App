@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_size.dart';
 import '../../../core/constant/college_data.dart';
+import '../../../core/routes/app_navigation.dart';
 
 class CollegeScreen extends StatefulWidget {
   const CollegeScreen({super.key});
@@ -60,9 +61,11 @@ class _CollegeScreenState extends State<CollegeScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: AppColors.black),
           onPressed: () {
-             if (Navigator.canPop(context)) {
-               Navigator.pop(context);
-             }
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.mainNav,
+              (route) => false,
+            );
           },
         ),
         title: Text(
@@ -86,18 +89,31 @@ class _CollegeScreenState extends State<CollegeScreen> {
           // Search Bar
           Padding(
             padding: EdgeInsets.symmetric(horizontal: AppSize.width(0.05), vertical: AppSize.height(0.01)),
-            child: TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                hintText: "Search colleges...",
-                hintStyle: TextStyle(color: Colors.grey[400], fontSize: AppSize.height(0.018)),
-                filled: true,
-                fillColor: Colors.grey[100],
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(AppSize.width(0.03)),
-                  borderSide: BorderSide.none,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(AppSize.width(0.08)),
+                border: Border.all(color: Colors.grey.withOpacity(0.3)),
+              ),
+              child: TextField(
+                controller: _searchController,
+                onChanged: (value) => _filterColleges(),
+                decoration: InputDecoration(
+                  hintText: "Search colleges...",
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: AppSize.height(0.018)),
+                  prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                  suffixIcon: _searchController.text.isNotEmpty 
+                    ? IconButton(
+                        icon: const Icon(Icons.clear, color: Colors.grey),
+                        onPressed: () {
+                          _searchController.clear();
+                          _filterColleges();
+                        },
+                      ) 
+                    : null,
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(vertical: AppSize.height(0.015)),
                 ),
-                contentPadding: EdgeInsets.symmetric(horizontal: AppSize.width(0.04), vertical: AppSize.height(0.015)),
               ),
             ),
           ),
