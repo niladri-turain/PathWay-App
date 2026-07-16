@@ -49,9 +49,9 @@ class _EnqueryScreenState extends State<EnqueryScreen> {
     bool isModal = ModalRoute.of(context)?.canPop ?? false;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.light,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.green,
         elevation: 0,
         leading: isModal
             ? IconButton(
@@ -62,7 +62,7 @@ class _EnqueryScreenState extends State<EnqueryScreen> {
         title: Text(
           "Enquiry Form",
           style: TextStyle(
-            color: AppColors.black,
+            color: AppColors.white,
             fontSize: AppSize.height(0.022),
             fontWeight: FontWeight.bold,
           ),

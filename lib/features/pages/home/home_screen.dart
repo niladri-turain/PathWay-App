@@ -4,6 +4,7 @@ import '../../../core/constant/app_pngs.dart';
 import '../../../core/constant/app_size.dart';
 import '../../../widgets/explore_card.dart';
 import '../../../widgets/item_card.dart';
+import '../../../core/routes/app_navigation.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -130,7 +131,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: AppSize.height(0.03)),
 
             // Popular Courses
-            _buildHeader("Popular Courses"),
+            _buildHeader("Popular Courses", () {
+              Navigator.pushNamed(context, AppRoutes.course);
+            }),
             SizedBox(height: AppSize.height(0.015)),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -159,7 +162,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: AppSize.height(0.02)),
 
             // Top Colleges
-            _buildHeader("Top Colleges"),
+            _buildHeader("Top Colleges", () {
+              Navigator.pushNamed(context, AppRoutes.college);
+            }),
             SizedBox(height: AppSize.height(0.015)),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -194,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildHeader(String title) {
+  Widget _buildHeader(String title, VoidCallback onTap) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSize.width(0.05)),
       child: Row(
@@ -207,12 +212,15 @@ class _HomeScreenState extends State<HomeScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(
-            "View All",
-            style: TextStyle(
-              fontSize: AppSize.height(0.016),
-              color: AppColors.green,
-              fontWeight: FontWeight.bold,
+          GestureDetector(
+            onTap: onTap,
+            child: Text(
+              "View All",
+              style: TextStyle(
+                fontSize: AppSize.height(0.016),
+                color: AppColors.green,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

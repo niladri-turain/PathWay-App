@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../features/pages/main_nav_screen.dart';
 import '../../features/pages/splash/splash_screen.dart';
 import '../../features/pages/course/course_details.dart';
+import '../../features/pages/course/course_screen.dart';
+import '../../features/pages/college/college_screen.dart';
 import '../../features/pages/enquery/enquery_screen.dart';
 
 class AppRoutes {
@@ -9,6 +11,8 @@ class AppRoutes {
   static const String mainNav = '/mainNav';
   static const String courseDetails = '/courseDetails';
   static const String enquiry = '/enquiry';
+  static const String course = '/course';
+  static const String college = '/college';
 
   static Map<String, WidgetBuilder> get routes => {
         splash: (context) => const SplashScreen(),
@@ -26,5 +30,7 @@ class AppRoutes {
             courseName: args?['courseName'],
           );
         },
+        course: (context) => const CourseScreen(),
+        college: (context) => const CollegeScreen(),
       };
 }
