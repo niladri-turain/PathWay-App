@@ -26,18 +26,18 @@ class _CourseDetailsState extends State<CourseDetails> {
     final data = CourseData.details[widget.courseName] ?? CourseData.details["MBA"]!;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.light,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.green,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.black),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           "Course Details",
           style: TextStyle(
-            color: AppColors.black,
+            color: AppColors.white,
             fontSize: AppSize.height(0.022),
             fontWeight: FontWeight.bold,
           ),
@@ -59,12 +59,12 @@ class _CourseDetailsState extends State<CourseDetails> {
             Container(
               height: AppSize.height(0.22),
               width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: AppSize.width(0.05)),
+              margin: EdgeInsets.symmetric(horizontal: AppSize.width(0.00)),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppSize.width(0.04)),
                 image: DecorationImage(
                   image: AssetImage(widget.courseImage),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),

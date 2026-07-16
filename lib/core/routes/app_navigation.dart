@@ -3,6 +3,7 @@ import '../../features/pages/main_nav_screen.dart';
 import '../../features/pages/splash/splash_screen.dart';
 import '../../features/pages/course/course_details.dart';
 import '../../features/pages/course/course_screen.dart';
+import '../../features/pages/college/college_details.dart';
 import '../../features/pages/college/college_screen.dart';
 import '../../features/pages/enquery/enquery_screen.dart';
 
@@ -13,6 +14,7 @@ class AppRoutes {
   static const String enquiry = '/enquiry';
   static const String course = '/course';
   static const String college = '/college';
+  static const String collegeDetails = '/collegeDetails';
 
   static Map<String, WidgetBuilder> get routes => {
         splash: (context) => const SplashScreen(),
@@ -32,5 +34,11 @@ class AppRoutes {
         },
         course: (context) => const CourseScreen(),
         college: (context) => const CollegeScreen(),
+        collegeDetails: (context) {
+          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          return CollegeDetails(
+            college: args['college'],
+          );
+        },
       };
 }

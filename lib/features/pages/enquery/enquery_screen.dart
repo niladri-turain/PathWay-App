@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_size.dart';
+import '../../../core/routes/app_navigation.dart';
 
 class EnqueryScreen extends StatefulWidget {
   final String? courseName;
@@ -46,19 +47,21 @@ class _EnqueryScreenState extends State<EnqueryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool isModal = ModalRoute.of(context)?.canPop ?? false;
-
     return Scaffold(
       backgroundColor: AppColors.light,
       appBar: AppBar(
         backgroundColor: AppColors.green,
         elevation: 0,
-        leading: isModal
-            ? IconButton(
-                icon: const Icon(Icons.arrow_back, color: AppColors.black),
-                onPressed: () => Navigator.pop(context),
-              )
-            : null,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
+          onPressed: () {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.mainNav,
+              (route) => false,
+            );
+          },
+        ),
         title: Text(
           "Enquiry Form",
           style: TextStyle(
@@ -174,7 +177,7 @@ class _EnqueryScreenState extends State<EnqueryScreen> {
         hintStyle: TextStyle(color: Colors.grey[400], fontSize: AppSize.height(0.016)),
         prefixIcon: Icon(icon, color: AppColors.green, size: AppSize.height(0.022)),
         filled: true,
-        fillColor: Colors.grey[50],
+        fillColor: AppColors.white,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppSize.width(0.02)),
           borderSide: BorderSide(color: Colors.grey[200]!),
@@ -204,10 +207,11 @@ class _EnqueryScreenState extends State<EnqueryScreen> {
   Widget _buildDropdown() {
     return DropdownButtonFormField<String>(
       value: _selectedCourse,
+      dropdownColor: AppColors.white,
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.school_outlined, color: AppColors.green, size: AppSize.height(0.022)),
         filled: true,
-        fillColor: Colors.grey[50],
+        fillColor: AppColors.white,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppSize.width(0.02)),
           borderSide: BorderSide(color: Colors.grey[200]!),

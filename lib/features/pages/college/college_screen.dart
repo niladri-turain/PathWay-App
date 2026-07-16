@@ -138,7 +138,7 @@ class _CollegeScreenState extends State<CollegeScreen> {
                     margin: EdgeInsets.only(right: AppSize.width(0.03), top: 10, bottom: 10),
                     padding: EdgeInsets.symmetric(horizontal: AppSize.width(0.04)),
                     decoration: BoxDecoration(
-                      color: isSelected ? AppColors.green : Colors.grey[100],
+                      color: isSelected ? AppColors.green : Colors.grey[200],
                       borderRadius: BorderRadius.circular(AppSize.width(0.05)),
                     ),
                     alignment: Alignment.center,
@@ -176,100 +176,109 @@ class _CollegeScreenState extends State<CollegeScreen> {
   }
 
   Widget _buildCollegeCard(Map<String, dynamic> college) {
-    return Container(
-      margin: EdgeInsets.only(bottom: AppSize.height(0.02)),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(AppSize.width(0.03)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(AppSize.width(0.03)),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // College Image
-            Container(
-              width: AppSize.width(0.25),
-              height: AppSize.width(0.2),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppSize.width(0.02)),
-                image: DecorationImage(
-                  image: AssetImage(college["image"]),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            SizedBox(width: AppSize.width(0.03)),
-            
-            // College Details
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          college["name"],
-                          style: TextStyle(
-                            fontSize: AppSize.height(0.018),
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.black,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            college["rating"],
-                            style: TextStyle(
-                              fontSize: AppSize.height(0.016),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const Icon(Icons.star, color: Colors.orange, size: 16),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: AppSize.height(0.005)),
-                  Text(
-                    college["location"],
-                    style: TextStyle(
-                      fontSize: AppSize.height(0.014),
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  SizedBox(height: AppSize.height(0.015)),
-                  Row(
-                    children: (college["tags"] as List).map<Widget>((tag) {
-                      return Padding(
-                        padding: EdgeInsets.only(right: AppSize.width(0.03)),
-                        child: Text(
-                          tag,
-                          style: TextStyle(
-                            fontSize: AppSize.height(0.012),
-                            fontWeight: FontWeight.w600,
-                            color: Colors.grey[700],
-                          ),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ],
-              ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          AppRoutes.collegeDetails,
+          arguments: {'college': college},
+        );
+      },
+      child: Container(
+        margin: EdgeInsets.only(bottom: AppSize.height(0.02)),
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(AppSize.width(0.03)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 5),
             ),
           ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(AppSize.width(0.03)),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // College Image
+              Container(
+                width: AppSize.width(0.25),
+                height: AppSize.width(0.2),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(AppSize.width(0.02)),
+                  image: DecorationImage(
+                    image: AssetImage(college["image"]),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              SizedBox(width: AppSize.width(0.03)),
+              
+              // College Details
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            college["name"],
+                            style: TextStyle(
+                              fontSize: AppSize.height(0.018),
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.black,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              college["rating"],
+                              style: TextStyle(
+                                fontSize: AppSize.height(0.016),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const Icon(Icons.star, color: Colors.orange, size: 16),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: AppSize.height(0.005)),
+                    Text(
+                      college["location"],
+                      style: TextStyle(
+                        fontSize: AppSize.height(0.014),
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                    SizedBox(height: AppSize.height(0.015)),
+                    Row(
+                      children: (college["tags"] as List).map<Widget>((tag) {
+                        return Padding(
+                          padding: EdgeInsets.only(right: AppSize.width(0.03)),
+                          child: Text(
+                            tag,
+                            style: TextStyle(
+                              fontSize: AppSize.height(0.012),
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey[700],
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

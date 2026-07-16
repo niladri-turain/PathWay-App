@@ -39,6 +39,8 @@ class _MainNavScreenState extends State<MainNavScreen> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
+        backgroundColor: AppColors.white,
+        elevation: 10,
         selectedItemColor: AppColors.green,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
