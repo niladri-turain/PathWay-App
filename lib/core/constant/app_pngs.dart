@@ -15,6 +15,16 @@ class AppImagesPng {
   static const mbbsCourse = "assets/images/mbbs.jpeg";
   static const mdmsCourse = "assets/images/mdms.webp";
   static const mbaCourse = "assets/images/mbaCource.png";
+  static const iqCollege = "assets/images/iqcity.webp";
+  static const kpcCollege = "assets/images/kpc.jpeg";
+  static const gouridebiCollege = "assets/images/gouridebi.jpg";
+  static const sankaCollege = "assets/images/sanka.webp";
+  static const santiniketanCollege = "assets/images/Santiniketan.webp";
+  static const karnavatiCollege = "assets/images/Karnavati.jpg";
+  static const jaganathCollege = "assets/images/jaganath.webp";
+  static const kusumCollege = "assets/images/kusum.jpeg";
+  static const msCollege = "assets/images/ms.jpg";
+  static const ksCollege = "assets/images/ks.jpg";
 
   
 }
