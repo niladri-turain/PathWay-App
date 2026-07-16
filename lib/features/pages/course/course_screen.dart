@@ -87,10 +87,10 @@ class _CourseScreenState extends State<CourseScreen> {
     return Scaffold(
       backgroundColor: AppColors.light,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.green,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.pushNamedAndRemoveUntil(
               context,
@@ -102,7 +102,7 @@ class _CourseScreenState extends State<CourseScreen> {
         title: Text(
           "Courses",
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: AppSize.height(0.022),
             fontWeight: FontWeight.bold,
           ),
@@ -110,7 +110,7 @@ class _CourseScreenState extends State<CourseScreen> {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.search, color: Colors.black),
+            icon: const Icon(Icons.search, color: Colors.white),
             onPressed: () {},
           ),
         ],

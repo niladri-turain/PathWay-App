@@ -54,12 +54,12 @@ class _CollegeScreenState extends State<CollegeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.light,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.green,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.black),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
           onPressed: () {
             Navigator.pushNamedAndRemoveUntil(
               context,
@@ -71,7 +71,7 @@ class _CollegeScreenState extends State<CollegeScreen> {
         title: Text(
           "Colleges",
           style: TextStyle(
-            color: AppColors.black,
+            color: AppColors.white,
             fontSize: AppSize.height(0.022),
             fontWeight: FontWeight.bold,
           ),
@@ -79,7 +79,7 @@ class _CollegeScreenState extends State<CollegeScreen> {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.search, color: AppColors.black),
+            icon: const Icon(Icons.search, color: AppColors.white),
             onPressed: () {},
           ),
         ],
