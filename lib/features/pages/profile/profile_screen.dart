@@ -97,9 +97,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 padding: EdgeInsets.symmetric(vertical: AppSize.height(0.02)),
                 child: Column(
                   children: [
-                    _buildProfileOption(Icons.favorite, "Saved Courses"),
-                    _buildProfileOption(Icons.account_balance, "Applied Colleges"),
-                    _buildProfileOption(Icons.assignment, "My Enquiries"),
+                    _buildProfileOption(
+                      Icons.favorite,
+                      "Saved Courses",
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.savedCourses);
+                      },
+                    ),
+                    _buildProfileOption(
+                      Icons.account_balance,
+                      "Applied Colleges",
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.appliedColleges);
+                      },
+                    ),
+                    _buildProfileOption(
+                      Icons.assignment,
+                      "My Enquiries",
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.myEnquiries);
+                      },
+                    ),
                     _buildProfileOption(
                       Icons.notifications,
                       "Notifications",

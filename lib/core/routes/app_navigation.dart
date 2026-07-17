@@ -10,6 +10,9 @@ import '../../features/pages/support/contact_support_screen.dart';
 import '../../features/pages/support/about_us_screen.dart';
 import '../../features/pages/support/privacy_policy_screen.dart';
 import '../../features/pages/support/notification_screen.dart';
+import '../../features/pages/enquery/my_enquiries_screen.dart';
+import '../../features/pages/college/applied_colleges_screen.dart';
+import '../../features/pages/course/saved_courses_screen.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -23,6 +26,9 @@ class AppRoutes {
   static const String aboutUs = '/aboutUs';
   static const String privacyPolicy = '/privacyPolicy';
   static const String notifications = '/notifications';
+  static const String myEnquiries = '/myEnquiries';
+  static const String appliedColleges = '/appliedColleges';
+  static const String savedCourses = '/savedCourses';
 
   static Map<String, WidgetBuilder> get routes => {
         splash: (context) => const SplashScreen(),
@@ -52,5 +58,8 @@ class AppRoutes {
         aboutUs: (context) => const AboutUsScreen(),
         privacyPolicy: (context) => const PrivacyPolicyScreen(),
         notifications: (context) => const NotificationScreen(),
+        myEnquiries: (context) => const MyEnquiriesScreen(),
+        appliedColleges: (context) => const AppliedCollegesScreen(),
+        savedCourses: (context) => const SavedCoursesScreen(),
       };
 }
