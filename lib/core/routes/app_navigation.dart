@@ -6,6 +6,8 @@ import '../../features/pages/course/course_screen.dart';
 import '../../features/pages/college/college_details.dart';
 import '../../features/pages/college/college_screen.dart';
 import '../../features/pages/enquery/enquery_screen.dart';
+import '../../features/pages/support/contact_support_screen.dart';
+import '../../features/pages/support/about_us_screen.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -15,6 +17,8 @@ class AppRoutes {
   static const String course = '/course';
   static const String college = '/college';
   static const String collegeDetails = '/collegeDetails';
+  static const String contactSupport = '/contactSupport';
+  static const String aboutUs = '/aboutUs';
 
   static Map<String, WidgetBuilder> get routes => {
         splash: (context) => const SplashScreen(),
@@ -40,5 +44,7 @@ class AppRoutes {
             college: args['college'],
           );
         },
+        contactSupport: (context) => const ContactSupportScreen(),
+        aboutUs: (context) => const AboutUsScreen(),
       };
 }

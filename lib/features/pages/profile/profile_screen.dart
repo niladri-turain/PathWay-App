@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_size.dart';
+import '../../../core/routes/app_navigation.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -100,9 +101,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     _buildProfileOption(Icons.account_balance, "Applied Colleges"),
                     _buildProfileOption(Icons.assignment, "My Enquiries"),
                     _buildProfileOption(Icons.notifications, "Notifications"),
-                    _buildProfileOption(Icons.support_agent, "Contact Support"),
+                    _buildProfileOption(
+                      Icons.support_agent,
+                      "Contact Support",
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.contactSupport);
+                      },
+                    ),
                     _buildProfileOption(Icons.privacy_tip, "Privacy Policy"),
-                    _buildProfileOption(Icons.info, "About Us"),
+                    _buildProfileOption(
+                      Icons.info,
+                      "About Us",
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.aboutUs);
+                      },
+                    ),
                     _buildProfileOption(Icons.logout, "Logout", isLogout: true),
                   ],
                 ),
@@ -114,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildProfileOption(IconData icon, String title, {bool isLogout = false}) {
+  Widget _buildProfileOption(IconData icon, String title, {bool isLogout = false, VoidCallback? onTap}) {
     return Column(
       children: [
         ListTile(
@@ -135,9 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Icons.chevron_right,
             color: isLogout ? Colors.red : Colors.grey,
           ),
-          onTap: () {
-            // Add navigation logic here
-          },
+          onTap: onTap,
         ),
         if (!isLogout)
           Padding(
