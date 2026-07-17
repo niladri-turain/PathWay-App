@@ -41,7 +41,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Icon(Icons.arrow_back, color: AppColors.white),
+                        IconButton(
+                          onPressed: () =>  Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            AppRoutes.mainNav,
+                                (route) => false,
+                          ),
+                          icon: const Icon(Icons.arrow_back, color: AppColors.white),
+                        ),
                         const Icon(Icons.settings, color: AppColors.white),
                       ],
                     ),
