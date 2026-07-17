@@ -108,7 +108,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Navigator.pushNamed(context, AppRoutes.contactSupport);
                       },
                     ),
-                    _buildProfileOption(Icons.privacy_tip, "Privacy Policy"),
+                    _buildProfileOption(
+                      Icons.privacy_tip,
+                      "Privacy Policy",
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.privacyPolicy);
+                      },
+                    ),
                     _buildProfileOption(
                       Icons.info,
                       "About Us",
