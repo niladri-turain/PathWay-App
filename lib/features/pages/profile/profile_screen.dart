@@ -100,7 +100,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     _buildProfileOption(Icons.favorite, "Saved Courses"),
                     _buildProfileOption(Icons.account_balance, "Applied Colleges"),
                     _buildProfileOption(Icons.assignment, "My Enquiries"),
-                    _buildProfileOption(Icons.notifications, "Notifications"),
+                    _buildProfileOption(
+                      Icons.notifications,
+                      "Notifications",
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.notifications);
+                      },
+                    ),
                     _buildProfileOption(
                       Icons.support_agent,
                       "Contact Support",
