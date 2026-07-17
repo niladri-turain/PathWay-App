@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.light,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 // 3. Third: Banner Image (Admission Card) at the Bottom
 
                 Positioned(
-                  bottom: -AppSize.height(0.13),
+                  bottom: -AppSize.height(0.11),
                   left: AppSize.width(0.05),
                   right: AppSize.width(0.05),
                   child: Container(
