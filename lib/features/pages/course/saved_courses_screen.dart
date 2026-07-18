@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pathway_demo/core/constant/app_pngs.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_size.dart';
 import '../../../core/routes/app_navigation.dart';
@@ -13,61 +14,56 @@ class SavedCoursesScreen extends StatelessWidget {
         "name": "MBA in Finance",
         "duration": "2 Years",
         "fees": "₹ 4.5 Lakhs",
-        "image": "https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-13391.jpg"
+        "image": AppImagesPng.one
       },
       {
         "name": "BCA Admission",
         "duration": "3 Years",
         "fees": "₹ 2.1 Lakhs",
-        "image": "https://img.freepik.com/free-vector/gradient-code-syntax-background_23-2149152142.jpg"
+        "image": AppImagesPng.two
       },
       {
         "name": "MCA (Data Science)",
         "duration": "2 Years",
         "fees": "₹ 3.2 Lakhs",
-        "image": "https://img.freepik.com/free-photo/technology-concept-with-tablet_23-2148831934.jpg"
+        "image": AppImagesPng.three
       },
       {
         "name": "BBA International",
         "duration": "3 Years",
         "fees": "₹ 5.0 Lakhs",
-        "image": "https://img.freepik.com/free-photo/corporate-management-strategy-solution-concept_53876-167088.jpg"
+        "image": AppImagesPng.four
       },
       {
         "name": "B.Tech Computer Science",
         "duration": "4 Years",
         "fees": "₹ 8.5 Lakhs",
-        "image": "https://img.freepik.com/free-photo/software-developer-programming-firewall-laptop-screen-office_482257-20092.jpg"
+        "image": AppImagesPng.five
       },
       {
         "name": "Hotel Management",
         "duration": "3 Years",
         "fees": "₹ 3.8 Lakhs",
-        "image": "https://img.freepik.com/free-photo/top-view-arrangement-with-food-waiter-uniform_23-2148386185.jpg"
+        "image": AppImagesPng.six
       },
       {
         "name": "MBBS",
         "duration": "5.5 Years",
         "fees": "₹ 25 Lakhs",
-        "image": "https://img.freepik.com/free-photo/medical-stethoscope-isolated-white-background_185193-109041.jpg"
+        "image": AppImagesPng.seven
       },
-      {
-        "name": "Law (LLB)",
-        "duration": "3 Years",
-        "fees": "₹ 1.8 Lakhs",
-        "image": "https://img.freepik.com/free-photo/gavel-law-books-justice-concept_1150-17769.jpg"
-      },
+
       {
         "name": "B.Sc Nursing",
         "duration": "4 Years",
         "fees": "₹ 2.5 Lakhs",
-        "image": "https://img.freepik.com/free-photo/nurse-holding-patient-hand-hospital_23-2148962450.jpg"
+        "image": AppImagesPng.eight
       },
       {
         "name": "Digital Marketing",
         "duration": "1 Year",
         "fees": "₹ 0.8 Lakhs",
-        "image": "https://img.freepik.com/free-photo/marketing-strategy-planning-search-statistical-concept_53876-133917.jpg"
+        "image": AppImagesPng.nine
       },
     ];
 
@@ -123,7 +119,7 @@ class SavedCoursesScreen extends StatelessWidget {
               topLeft: Radius.circular(AppSize.width(0.03)),
               bottomLeft: Radius.circular(AppSize.width(0.03)),
             ),
-            child: Image.network(
+            child: Image.asset(
               course['image']!,
               width: AppSize.width(0.3),
               height: AppSize.height(0.12),

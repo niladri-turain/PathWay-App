@@ -25,6 +25,15 @@ class AppImagesPng {
   static const kusumCollege = "assets/images/kusum.jpeg";
   static const msCollege = "assets/images/ms.jpg";
   static const ksCollege = "assets/images/ks.jpg";
+  static const one = "assets/images/1.webp";
+  static const two = "assets/images/2.jpg";
+  static const three = "assets/images/3.jpeg";
+  static const four = "assets/images/4.webp";
+  static const five = "assets/images/5.jpeg";
+  static const six = "assets/images/6.webp";
+  static const seven = "assets/images/7.webp";
+  static const eight = "assets/images/8.webp";
+  static const nine = "assets/images/9.jpg";
 
   
 }
