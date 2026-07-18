@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pathway_demo/core/constant/app_pngs.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_size.dart';
 import '../../../core/routes/app_navigation.dart';
@@ -59,9 +60,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           radius: AppSize.width(0.12),
                           backgroundColor: Colors.white24,
                           child: CircleAvatar(
-                            radius: AppSize.width(0.11),
-                            backgroundImage: const NetworkImage(
-                              "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg",
+                            radius: AppSize.width(0.12),
+                            backgroundImage: AssetImage(
+                              AppImagesPng.profile
                             ),
                           ),
                         ),
