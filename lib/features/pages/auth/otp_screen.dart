@@ -12,38 +12,47 @@ class OtpScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.green,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.black),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           "OTP Verification",
           style: TextStyle(
-            color: AppColors.black,
+            color: AppColors.white,
             fontSize: AppSize.height(0.02),
             fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
+      body: Stack(
+        children: [
+          // Background Image
+          Positioned.fill(
+            child: Image.asset(
+              AppImagesPng.loginBackground,
+              fit: BoxFit.cover,
+            ),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
             SizedBox(height: AppSize.height(0.02)),
             // Logo Section
             Column(
               children: [
                 Image.asset(
-                  AppImagesPng.splashScreen,
-                  height: AppSize.height(0.1),
+                  AppImagesPng.logo,
+                  height: AppSize.height(0.12),
                 ),
                 SizedBox(height: AppSize.height(0.01)),
                 Text(
                   "PATHWAY",
                   style: TextStyle(
-                    fontSize: AppSize.height(0.022),
+                    fontSize: AppSize.height(0.025),
                     fontWeight: FontWeight.bold,
                     color: AppColors.green,
                     letterSpacing: 2,
@@ -52,16 +61,16 @@ class OtpScreen extends StatelessWidget {
                 Text(
                   "EDUCATION TRUST",
                   style: TextStyle(
-                    fontSize: AppSize.height(0.012),
+                    fontSize: AppSize.height(0.015),
                     fontWeight: FontWeight.w500,
                     color: AppColors.green,
                   ),
                 ),
-                SizedBox(height: AppSize.height(0.005)),
+                SizedBox(height: AppSize.height(0.01)),
                 Text(
                   "Your Career Starts Here",
                   style: TextStyle(
-                    fontSize: AppSize.height(0.014),
+                    fontSize: AppSize.height(0.016),
                     color: Colors.grey[600],
                   ),
                 ),
@@ -205,8 +214,10 @@ class OtpScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ],
+  ),
+);
+}
 
   Widget _buildOtpBox(BuildContext context, String digit) {
     return Container(

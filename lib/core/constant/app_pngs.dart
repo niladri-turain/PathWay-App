@@ -36,6 +36,8 @@ class AppImagesPng {
   static const nine = "assets/images/9.jpg";
   static const profile = "assets/images/profile.png";
   static const logo = "assets/images/Pathway-Education-Logo.png";
+  static const loginBackground = "assets/images/loginBackground.png";
+  static const splash = "assets/images/loginBackground.png";
 
   
 }
