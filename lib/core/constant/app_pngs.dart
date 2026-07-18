@@ -35,6 +35,7 @@ class AppImagesPng {
   static const eight = "assets/images/8.webp";
   static const nine = "assets/images/9.jpg";
   static const profile = "assets/images/profile.png";
+  static const logo = "assets/images/Pathway-Education-Logo.png";
 
   
 }

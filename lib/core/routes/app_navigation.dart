@@ -13,9 +13,13 @@ import '../../features/pages/support/notification_screen.dart';
 import '../../features/pages/enquery/my_enquiries_screen.dart';
 import '../../features/pages/college/applied_colleges_screen.dart';
 import '../../features/pages/course/saved_courses_screen.dart';
+import '../../features/pages/auth/login_screen.dart';
+import '../../features/pages/auth/otp_screen.dart';
 
 class AppRoutes {
   static const String splash = '/';
+  static const String login = '/login';
+  static const String otp = '/otp';
   static const String mainNav = '/mainNav';
   static const String courseDetails = '/courseDetails';
   static const String enquiry = '/enquiry';
@@ -32,6 +36,8 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> get routes => {
         splash: (context) => const SplashScreen(),
+        login: (context) => const LoginScreen(),
+        otp: (context) => const OtpScreen(),
         mainNav: (context) => const MainNavScreen(),
         courseDetails: (context) {
           final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;

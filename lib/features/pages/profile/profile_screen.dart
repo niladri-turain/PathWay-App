@@ -154,7 +154,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Navigator.pushNamed(context, AppRoutes.aboutUs);
                       },
                     ),
-                    _buildProfileOption(Icons.logout, "Logout", isLogout: true),
+                    _buildProfileOption(
+                      Icons.logout,
+                      "Logout",
+                      isLogout: true,
+                      onTap: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          AppRoutes.login,
+                          (route) => false,
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),

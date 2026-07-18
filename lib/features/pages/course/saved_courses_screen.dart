@@ -123,7 +123,7 @@ class SavedCoursesScreen extends StatelessWidget {
               course['image']!,
               width: AppSize.width(0.3),
               height: AppSize.height(0.12),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               errorBuilder: (context, error, stackTrace) => Container(
                 width: AppSize.width(0.3),
                 height: AppSize.height(0.12),
