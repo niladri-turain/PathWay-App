@@ -23,6 +23,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Ensure AppSize is initialized before using it
+    AppSize.init(context);
+
     return Scaffold(
       body: Stack(
         children: [
@@ -30,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Positioned.fill(
             child: Image.asset(
               AppImagesPng.loginBackground,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
           // Logo and Text Section
