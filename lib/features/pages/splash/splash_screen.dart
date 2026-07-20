@@ -29,14 +29,15 @@ class _SplashScreenState extends State<SplashScreen> {
           // Background Image
           Positioned.fill(
             child: Image.asset(
-              AppImagesPng.splash,
+              AppImagesPng.loginBackground,
               fit: BoxFit.cover,
             ),
           ),
           // Logo and Text Section
-          Center(
+          Align(
+            alignment: const Alignment(0, 0.2), // Moved further down to sit perfectly in the white portion
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
                   AppImagesPng.logo,
@@ -89,8 +90,6 @@ class _SplashScreenState extends State<SplashScreen> {
                     letterSpacing: 0.5,
                   ),
                 ),
-                // Offset to center the content vertically above the buildings
-                SizedBox(height: AppSize.height(0.15)),
               ],
             ),
           ),

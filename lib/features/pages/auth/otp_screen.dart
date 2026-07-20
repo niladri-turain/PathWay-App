@@ -34,7 +34,7 @@ class OtpScreen extends StatelessWidget {
           Positioned.fill(
             child: Image.asset(
               AppImagesPng.loginBackground,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
           SingleChildScrollView(
@@ -169,7 +169,7 @@ class OtpScreen extends StatelessWidget {
               ],
             ),
 
-            SizedBox(height: AppSize.height(0.06)),
+            SizedBox(height: AppSize.height(0.04)),
 
             // Verify OTP Button
             Padding(

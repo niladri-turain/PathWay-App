@@ -12,13 +12,14 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           // Background Image
           Positioned.fill(
             child: Image.asset(
               AppImagesPng.loginBackground,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
           // Content
@@ -225,11 +226,11 @@ class LoginScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildSocialIcon("https://cdn-icons-png.flaticon.com/512/2991/2991148.png"),
+                          _buildSocialIcon(AppImagesPng.google),
                           const SizedBox(width: 20),
-                          _buildSocialIcon("https://cdn-icons-png.flaticon.com/512/733/733547.png"),
+                          _buildSocialIcon(AppImagesPng.fb),
                           const SizedBox(width: 20),
-                          _buildSocialIcon("https://cdn-icons-png.flaticon.com/512/732/732200.png"),
+                          _buildSocialIcon(AppImagesPng.email),
                         ],
                       ),
 
@@ -291,14 +292,14 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSocialIcon(String url) {
+  Widget _buildSocialIcon(String assetPath) {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey[200]!),
         shape: BoxShape.circle,
       ),
-      child: Image.network(url, height: 25, width: 25),
+      child: Image.asset(assetPath, height: 25, width: 25),
     );
   }
 }
