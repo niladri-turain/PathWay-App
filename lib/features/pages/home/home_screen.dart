@@ -115,13 +115,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   SizedBox(height: AppSize.height(0.015)),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ExploreCard(icon: Icons.menu_book, label: "Courses"),
-                      ExploreCard(icon: Icons.account_balance, label: "Colleges"),
-                      ExploreCard(icon: Icons.edit_document, label: "Enquiry"),
-                      ExploreCard(icon: Icons.phone_android, label: "Contact"),
+                      ExploreCard(
+                        icon: Icons.menu_book,
+                        label: "Courses",
+                        onTap: () => Navigator.pushNamed(context, AppRoutes.course),
+                      ),
+                      ExploreCard(
+                        icon: Icons.account_balance,
+                        label: "Colleges",
+                        onTap: () => Navigator.pushNamed(context, AppRoutes.college),
+                      ),
+                      ExploreCard(
+                        icon: Icons.edit_document,
+                        label: "Enquiry",
+                        onTap: () => Navigator.pushNamed(context, AppRoutes.enquiry),
+                      ),
+                      ExploreCard(
+                        icon: Icons.phone_android,
+                        label: "Contact",
+                        onTap: () => Navigator.pushNamed(context, AppRoutes.contactSupport),
+                      ),
                     ],
                   ),
                 ],
