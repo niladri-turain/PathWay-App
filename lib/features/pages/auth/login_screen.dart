@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        AppImagesPng.logo, // Assuming this is the logo
+                        AppImagesPng.applogo, // Assuming this is the logo
                         height: AppSize.height(0.12),
                       ),
                       SizedBox(height: AppSize.height(0.01)),

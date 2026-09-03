@@ -35,12 +35,13 @@ class AppImagesPng {
   static const eight = "assets/images/8.webp";
   static const nine = "assets/images/9.jpg";
   static const profile = "assets/images/profile.png";
-  static const logo = "assets/images/Pathway-Education-Logo.png";
+  static const logo = "assets/images/splash.png";
   static const loginBackground = "assets/images/loginBackground.png";
   static const splash = "assets/images/loginBackground.png";
   static const google = "assets/images/google.png";
   static const email = "assets/images/email.png";
   static const fb = "assets/images/fb.png";
+  static const applogo = "assets/images/applogo.png";
 
   
 }

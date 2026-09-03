@@ -45,7 +45,7 @@ class OtpScreen extends StatelessWidget {
             Column(
               children: [
                 Image.asset(
-                  AppImagesPng.logo,
+                  AppImagesPng.applogo,
                   height: AppSize.height(0.12),
                 ),
                 SizedBox(height: AppSize.height(0.01)),

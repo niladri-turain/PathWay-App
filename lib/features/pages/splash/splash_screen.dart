@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  AppImagesPng.logo,
+                  AppImagesPng.applogo,
                   height: AppSize.height(0.15),
                 ),
                 SizedBox(height: AppSize.height(0.02)),
