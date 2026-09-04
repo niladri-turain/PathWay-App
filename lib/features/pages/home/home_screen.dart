@@ -5,6 +5,7 @@ import '../../../core/constant/app_size.dart';
 import '../../../widgets/explore_card.dart';
 import '../../../widgets/item_card.dart';
 import '../../../widgets/college_card.dart';
+import '../../../widgets/service_card.dart';
 import '../../../core/routes/app_navigation.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -215,17 +216,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: AppSize.height(0.05)),
-
-            // Admission Guidance Section
-            _buildAdmissionGuidance(),
-
             SizedBox(height: AppSize.height(0.03)),
 
-            // Career Counselling Section
-            _buildCareerCounselling(),
-
-            SizedBox(height: AppSize.height(0.03)),
+            // Our Services Section
 
             _buildHorizontalCollegeSection("Top MBA", [
               CollegeCard(
@@ -437,7 +430,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ]),
 
-            SizedBox(height: AppSize.height(0.05)),
+            SizedBox(height: AppSize.height(0.03)),
+            _buildOurServices(),
           ],
         ),
       ),
@@ -478,118 +472,73 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildCareerCounselling() {
+  Widget _buildOurServices() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSize.width(0.05)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Career Counselling",
-            style: TextStyle(
-              fontSize: AppSize.height(0.022),
-              fontWeight: FontWeight.bold,
-              color: Colors.green[800],
-            ),
-          ),
-          SizedBox(height: AppSize.height(0.015)),
-
-        ],
-      ),
-    );
-  }
-
-  Widget _buildNumberPoint(int index, String title, String description) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "$index. ",
-            style: TextStyle(
-              fontSize: AppSize.height(0.013),
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Expanded(
-            child: RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  fontSize: AppSize.height(0.013),
-                  color: Colors.black87,
-                  height: 1.4,
-                ),
-                children: [
-                  TextSpan(
-                    text: title,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+          Row(
+            children: [
+              const Icon(Icons.school, color: Colors.orange, size: 28),
+              const SizedBox(width: 10),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    fontSize: AppSize.height(0.022),
+                    fontWeight: FontWeight.bold,
                   ),
-                  const TextSpan(text: " "),
-                  TextSpan(text: description),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildAdmissionGuidance() {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSize.width(0.05)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Admission Guidance",
-            style: TextStyle(
-              fontSize: AppSize.height(0.022),
-              fontWeight: FontWeight.bold,
-              color: Colors.green[800],
-            ),
-          ),
-
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBulletPoint(String title, String description) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 6.0),
-            child: Icon(Icons.circle, size: 6, color: Colors.black54),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  fontSize: AppSize.height(0.013),
-                  color: Colors.black87,
-                  height: 1.4,
+                  children: [
+                    TextSpan(
+                        text: "Our ",
+                        style: TextStyle(color: Colors.orange[800])),
+                    TextSpan(
+                        text: "Services",
+                        style: TextStyle(color: Colors.green[800])),
+                  ],
                 ),
-                children: [
-                  TextSpan(
-                    text: title,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const TextSpan(text: " "),
-                  TextSpan(text: description),
-                ],
               ),
-            ),
+            ],
           ),
+          const SizedBox(height: 20),
+          ServiceCard(
+            title: "Admission Guidance",
+            description:
+                "We offer comprehensive admission guidance to help you make informed decisions about your career path.",
+            imagePath: AppImagesPng.cl1,
+            icon: Icons.school,
+            themeColor: Colors.deepOrange,
+          ),
+          ServiceCard(
+            title: "Education Scholarship",
+            description:
+                "Embark on your journey to success with our higher education scholarship program. We provide clear guidance, effective growth strategies, and financial assistance.",
+            imagePath: AppImagesPng.cl2,
+            icon: Icons.school,
+            themeColor: Colors.green.shade700,
+          ),
+          ServiceCard(
+            title: "Student Education Loan",
+            description:
+                "We simplify the process of securing a bank loan for education. Our loan assistance services work with reputed organizations to make your education more accessible.",
+            imagePath: AppImagesPng.iqCollege,
+            icon: Icons.monetization_on,
+            themeColor: Colors.deepOrange.shade800,
+          ),
+          ServiceCard(
+            title: "Placement Assistance",
+            description:
+                "Eliminate job placement anxiety with our comprehensive placement services. We guide you through every step of the job search process, from identifying opportunities to final placement.",
+            imagePath: AppImagesPng.sankaCollege,
+            icon: Icons.business_center,
+            themeColor: Colors.green.shade800,
+          ),
+          const SizedBox(height: 30),
         ],
       ),
     );
   }
+
 
   Widget _buildCategoryCard(String title) {
     return GestureDetector(
