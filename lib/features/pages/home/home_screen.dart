@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 // 3. Third: Banner Image (Admission Card) at the Bottom
 
                 Positioned(
-                  bottom: -AppSize.height(0.11),
+                  bottom: -AppSize.height(0.12),
                   left: AppSize.width(0.05),
                   right: AppSize.width(0.05),
                   child: Container(
@@ -242,77 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(height: AppSize.height(0.015)),
-          Container(
-            padding: EdgeInsets.all(AppSize.width(0.04)),
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
-                ),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Top Career Counselor in Kolkata Provides Expert Career Counseling",
-                  style: TextStyle(
-                    fontSize: AppSize.height(0.018),
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.green,
-                  ),
-                ),
-                Divider(color: AppColors.green.withOpacity(0.3), thickness: 1),
-                SizedBox(height: AppSize.height(0.01)),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontSize: AppSize.height(0.014),
-                      color: Colors.black87,
-                      height: 1.5,
-                    ),
-                    children: [
-                      const TextSpan(
-                        text: "Short Description: ",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      const TextSpan(
-                        text:
-                            "Pathway Education Trust offers comprehensive career counselling services to help individuals identify their strengths, explore career options, and achieve their professional goals. Our experienced counsellors provide personalized guidance through one-on-one sessions, group counselling, and workshops, along with access to valuable resources like job search engines and interview preparation tips.",
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: AppSize.height(0.02)),
-                const Text(
-                  "Highlighted Points:",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: AppSize.height(0.01)),
-                _buildBulletPoint("Personalized career counselling to identify strengths and weaknesses", ""),
-                _buildBulletPoint("One-on-one sessions, group counselling, and workshops available", ""),
-                _buildBulletPoint("Comprehensive assessments with over 96% accuracy", ""),
-                _buildBulletPoint("Resources provided include job search engines, resume writing tips, and interview preparation advice", ""),
-                _buildBulletPoint("Supportive environment to explore career options and set personal goals", ""),
-                _buildBulletPoint("Experienced counsellors who are passionate about helping individuals succeed", ""),
-                SizedBox(height: AppSize.height(0.02)),
-                const Text(
-                  "Why Choose Pathway Education Trust:",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: AppSize.height(0.01)),
-                _buildNumberPoint(1, "Experience and Passion:", "With years of experience, our counsellors are dedicated to helping individuals reach their full potential."),
-                _buildNumberPoint(2, "Comprehensive Services:", "We offer a variety of services including one-on-one counselling, group sessions, and workshops to cater to diverse needs."),
-                _buildNumberPoint(3, "Resource Availability:", "Gain access to valuable resources such as job search engines and interview preparation tips to support your career journey."),
-                _buildNumberPoint(4, "Supportive Environment:", "Our counselling sessions are conducted in a confidential and supportive environment, ensuring comfort and trust."),
-                _buildNumberPoint(5, "Personalized Approach:", "We tailor our services to each individual's needs, helping them find the right career path based on their strengths and goals."),
-              ],
-            ),
-          ),
+
         ],
       ),
     );
@@ -369,71 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.green[800],
             ),
           ),
-          SizedBox(height: AppSize.height(0.015)),
-          Container(
-            padding: EdgeInsets.all(AppSize.width(0.04)),
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
-                ),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "We are The Best Admission Consultant in Kolkata",
-                  style: TextStyle(
-                    fontSize: AppSize.height(0.018),
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.green,
-                  ),
-                ),
-                Divider(color: AppColors.green.withOpacity(0.3), thickness: 1),
-                SizedBox(height: AppSize.height(0.01)),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontSize: AppSize.height(0.014),
-                      color: Colors.black87,
-                      height: 1.5,
-                    ),
-                    children: [
-                      const TextSpan(
-                        text: "Short Description: ",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      const TextSpan(
-                        text:
-                            "Pathway Education Trust offers comprehensive admission guidance services to help individuals make informed decisions about their career paths. From exploring various options to setting goals and overcoming obstacles, we provide personalised support every step of the way.",
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: AppSize.height(0.02)),
-                const Text(
-                  "Highlighted Points:",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: AppSize.height(0.01)),
-                _buildBulletPoint("Exploration of Options:",
-                    "Access resources and information on different career paths to make well-informed choices."),
-                _buildBulletPoint("Impartial Advice:",
-                    "Our career advisor consultants offer unbiased guidance to help you find the best fit for your aspirations."),
-                _buildBulletPoint("Goal Setting:",
-                    "Define your career goals and develop a clear plan to achieve them with our assistance."),
-                _buildBulletPoint("Overcoming Obstacles:",
-                    "Identify and address any obstacles standing in your way to ensure a smooth career transition."),
-                _buildBulletPoint("Confidential Services:",
-                    "All discussions with our counselors are kept confidential, providing a safe space to discuss your concerns and fears."),
-              ],
-            ),
-          ),
+
         ],
       ),
     );
