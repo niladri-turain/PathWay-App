@@ -53,16 +53,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             Icon(Icons.notes,
                                 color: AppColors.white,
                                 size: AppSize.height(0.035)),
-                            Image.asset(
-                              AppImagesPng.logo,
-                              height: AppSize.height(0.05),
-                            ),
+
                             Icon(Icons.notifications,
                                 color: AppColors.white,
                                 size: AppSize.height(0.035)),
                           ],
                         ),
-                        SizedBox(height: AppSize.height(0.02)),
+                        SizedBox(height: AppSize.height(0.01)),
                         Text(
                           "Hello, Student 👋",
                           style: TextStyle(
@@ -503,37 +500,40 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           const SizedBox(height: 20),
-          ServiceCard(
+          const ServiceCard(
             title: "Admission Guidance",
             description:
                 "We offer comprehensive admission guidance to help you make informed decisions about your career path.",
             imagePath: AppImagesPng.cl1,
-            icon: Icons.school,
-            themeColor: Colors.deepOrange,
+            themeColor: Color(0xFFE53935),
           ),
-          ServiceCard(
+          const ServiceCard(
+            title: "Career Counselling",
+            description:
+                "Get expert career counselling to help you choose the right path for a brighter future.",
+            imagePath: AppImagesPng.cl2,
+            themeColor: Color(0xFF43A047),
+          ),
+          const ServiceCard(
             title: "Education Scholarship",
             description:
-                "Embark on your journey to success with our higher education scholarship program. We provide clear guidance, effective growth strategies, and financial assistance.",
-            imagePath: AppImagesPng.cl2,
-            icon: Icons.school,
-            themeColor: Colors.green.shade700,
+                "Embark on your journey to success with our higher education scholarship program.",
+            imagePath: AppImagesPng.mba,
+            themeColor: Color(0xFF1E88E5),
           ),
-          ServiceCard(
+          const ServiceCard(
             title: "Student Education Loan",
             description:
-                "We simplify the process of securing a bank loan for education. Our loan assistance services work with reputed organizations to make your education more accessible.",
+                "We simplify the process of securing a bank loan for education. Our loan assistance services work with reputed organizations.",
             imagePath: AppImagesPng.iqCollege,
-            icon: Icons.monetization_on,
-            themeColor: Colors.deepOrange.shade800,
+            themeColor: Color(0xFFFB8C00),
           ),
-          ServiceCard(
+          const ServiceCard(
             title: "Placement Assistance",
             description:
-                "Eliminate job placement anxiety with our comprehensive placement services. We guide you through every step of the job search process, from identifying opportunities to final placement.",
+                "Eliminate job placement anxiety with our comprehensive placement services. We guide you through every step of the job search process.",
             imagePath: AppImagesPng.sankaCollege,
-            icon: Icons.business_center,
-            themeColor: Colors.green.shade800,
+            themeColor: Color(0xFF2E7D32),
           ),
           const SizedBox(height: 30),
         ],

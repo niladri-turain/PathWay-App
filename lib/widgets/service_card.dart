@@ -6,7 +6,6 @@ class ServiceCard extends StatelessWidget {
   final String title;
   final String description;
   final String imagePath;
-  final IconData icon;
   final Color themeColor;
   final VoidCallback? onTap;
 
@@ -15,7 +14,6 @@ class ServiceCard extends StatelessWidget {
     required this.title,
     required this.description,
     required this.imagePath,
-    required this.icon,
     required this.themeColor,
     this.onTap,
   });
@@ -25,132 +23,76 @@ class ServiceCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 20),
+        margin: const EdgeInsets.only(bottom: 16),
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.06),
-              blurRadius: 15,
-              offset: const Offset(0, 5),
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(25),
-          child: Stack(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
             children: [
-              // ছবির মতো পেছনে হালকা রঙের ডেকোরেশন
-              Positioned(
-                right: -10,
-                bottom: -10,
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    color: themeColor.withOpacity(0.08),
-                    shape: BoxShape.circle,
-                  ),
+              // Left side: Illustration
+              Container(
+                width: AppSize.width(0.22),
+                height: AppSize.width(0.2),
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: themeColor.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.contain,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
+              const SizedBox(width: 16),
+              // Middle: Title and Description
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // বাম পাশের কনটেন্ট
-                    Expanded(
-                      flex: 3,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  color: themeColor.withOpacity(0.1),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  icon,
-                                  color: themeColor,
-                                  size: 20,
-                                ),
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Text(
-                                  title,
-                                  style: TextStyle(
-                                    color: themeColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: AppSize.height(0.018),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 10),
-                          Text(
-                            description,
-                            maxLines: 4,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontSize: AppSize.height(0.0135),
-                              color: Colors.black54,
-                              height: 1.4,
-                            ),
-                          ),
-                          const SizedBox(height: 15),
-                          // Read More বাটন
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-                            decoration: BoxDecoration(
-                              color: themeColor.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "Read More",
-                                  style: TextStyle(
-                                    color: themeColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: AppSize.height(0.013),
-                                  ),
-                                ),
-                                const SizedBox(width: 6),
-                                Icon(
-                                  Icons.arrow_forward,
-                                  color: themeColor,
-                                  size: 16,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: themeColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: AppSize.height(0.018),
                       ),
                     ),
-                    const SizedBox(width: 12),
-                    // ডান পাশের ইমেজ
-                    Expanded(
-                      flex: 2,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.asset(
-                          imagePath,
-                          height: AppSize.height(0.13),
-                          fit: BoxFit.cover,
-                        ),
+                    const SizedBox(height: 4),
+                    Text(
+                      description,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: AppSize.height(0.013),
+                        color: Colors.grey[600],
+                        height: 1.3,
                       ),
                     ),
                   ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              // Right side: Action Button
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: themeColor.withOpacity(0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.chevron_right,
+                  color: themeColor,
+                  size: 24,
                 ),
               ),
             ],
