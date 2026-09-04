@@ -22,7 +22,7 @@ class AppImagesPng {
   static const santiniketanCollege = "assets/images/Santiniketan.webp";
   static const karnavatiCollege = "assets/images/Karnavati.jpg";
   static const jaganathCollege = "assets/images/jaganath.webp";
-  static const kusumCollege = "assets/images/kusum.jpeg";
+  static const kusumCollege = "assets/images/cl1.jpg";
   static const msCollege = "assets/images/ms.jpg";
   static const ksCollege = "assets/images/ks.jpg";
   static const one = "assets/images/1.webp";

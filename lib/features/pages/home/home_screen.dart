@@ -4,6 +4,7 @@ import '../../../core/constant/app_pngs.dart';
 import '../../../core/constant/app_size.dart';
 import '../../../widgets/explore_card.dart';
 import '../../../widgets/item_card.dart';
+import '../../../widgets/college_card.dart';
 import '../../../core/routes/app_navigation.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -50,6 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             Icon(Icons.notes,
                                 color: AppColors.white,
                                 size: AppSize.height(0.035)),
+                            Image.asset(
+                              AppImagesPng.logo,
+                              height: AppSize.height(0.05),
+                            ),
                             Icon(Icons.notifications,
                                 color: AppColors.white,
                                 size: AppSize.height(0.035)),
@@ -220,10 +225,256 @@ class _HomeScreenState extends State<HomeScreen> {
             // Career Counselling Section
             _buildCareerCounselling(),
 
+            SizedBox(height: AppSize.height(0.03)),
+
+            _buildHorizontalCollegeSection("Top MBA", [
+              CollegeCard(
+                name: "Lexicon MILE - Management...",
+                location: "GAT ND 726, MILE Tower, Road...",
+                imagePath: AppImagesPng.cl1,
+                rating: 4.0,
+                likes: 326,
+                tags: const ["MBA", "PGDM"],
+              ),
+              CollegeCard(
+                name: "Dr. D. Y. Patil Vidyapeeth, Pune",
+                location: "Sant Tukaram Nagar, Pimpri Colony...",
+                imagePath: AppImagesPng.cl2,
+                rating: 5.0,
+                likes: 189,
+                tags: const ["MBA", "PGDM"],
+              ),
+              CollegeCard(
+                name: "International School of...",
+                location: "S.No 9/1/1, Wadgaon Budruk...",
+                imagePath: AppImagesPng.cl3,
+                rating: 4.5,
+                likes: 201,
+                tags: const ["MBA", "PGDM"],
+              ),
+              CollegeCard(
+                name: "Western Business School Pune",
+                location: "845, BMCC Rd, Fergusson College...",
+                imagePath: AppImagesPng.one,
+                rating: 4.0,
+                likes: 327,
+                tags: const ["MBA", "PGDM"],
+              ),
+            ]),
+
+            _buildHorizontalCollegeSection("Top BBA", [
+              CollegeCard(
+                name: "United World School of Business...",
+                location: "A/907, Uvarsad-Vavol Road, Uvarsad...",
+                imagePath: AppImagesPng.karnavatiCollege,
+                rating: 4.8,
+                likes: 241,
+                tags: const ["BBA"],
+              ),
+              CollegeCard(
+                name: "Presidency University, Bengaluru",
+                location: "Itgalpura, Yelahanka, Bangalore",
+                imagePath: AppImagesPng.cl3,
+                rating: 4.8,
+                likes: 168,
+                tags: const ["BBA", "B.TECH"],
+              ),
+              CollegeCard(
+                name: "Karnavati University, Gujarat",
+                location: "A/907, Uvarsad-Vavol Road...",
+                imagePath: AppImagesPng.two,
+                rating: 4.8,
+                likes: 184,
+                tags: const ["BBA"],
+              ),
+              CollegeCard(
+                name: "Jain University Bengaluru",
+                location: "34, 1st Cross JC Road, Bengaluru...",
+                imagePath: AppImagesPng.three,
+                rating: 4.0,
+                likes: 348,
+                tags: const ["BBA", "BCA"],
+              ),
+            ]),
+
+            _buildHorizontalCollegeSection("Top MD/MS", [
+              CollegeCard(
+                name: "Dr. Chandramma Dayananda...",
+                location: "Devarakaggalahalli, Harohalli...",
+                imagePath: AppImagesPng.iqCollege,
+                rating: 5.0,
+                likes: 245,
+                tags: const ["MD", "M.B.B.S"],
+              ),
+              CollegeCard(
+                name: "M.S. Ramaiah Medical College...",
+                location: "M S Ramaiah Nagar, Mathikere...",
+                imagePath: AppImagesPng.four,
+                rating: 4.0,
+                likes: 341,
+                tags: const ["MD", "M.B.B.S"],
+              ),
+              CollegeCard(
+                name: "Kasturba Medical College (KMC...",
+                location: "Tiger Circle Road, Madhav Nagar...",
+                imagePath: AppImagesPng.five,
+                rating: 5.0,
+                likes: 297,
+                tags: const ["MD", "M.B.B.S"],
+              ),
+              CollegeCard(
+                name: "Jawaharlal Nehru Medical College",
+                location: "JNMC Campus, Nehru Nagar...",
+                imagePath: AppImagesPng.cl2,
+                rating: 4.5,
+                likes: 182,
+                tags: const ["MD", "M.B.B.S"],
+              ),
+            ]),
+
+            _buildHorizontalCollegeSection("Top M.B.B.S", [
+              CollegeCard(
+                name: "M.S. Ramaiah Medical College...",
+                location: "M S Ramaiah Nagar, Mathikere...",
+                imagePath: AppImagesPng.msCollege,
+                rating: 4.0,
+                likes: 341,
+                tags: const ["MD", "M.B.B.S"],
+              ),
+              CollegeCard(
+                name: "Kasturba Medical College (KMC...",
+                location: "Tiger Circle Road, Madhav Nagar...",
+                imagePath: AppImagesPng.ksCollege,
+                rating: 5.0,
+                likes: 297,
+                tags: const ["MD", "M.B.B.S"],
+              ),
+              CollegeCard(
+                name: "Dr. Chandramma Dayananda...",
+                location: "Devarakaggalahalli, Harohalli...",
+                imagePath: AppImagesPng.six,
+                rating: 5.0,
+                likes: 245,
+                tags: const ["MD", "M.B.B.S"],
+              ),
+              CollegeCard(
+                name: "Christian Medical College",
+                location: "Ida Scudder Road, Vellore...",
+                imagePath: AppImagesPng.cl1,
+                rating: 4.9,
+                likes: 512,
+                tags: const ["M.B.B.S"],
+              ),
+            ]),
+
+            _buildHorizontalCollegeSection("Top BDS", [
+              CollegeCard(
+                name: "Kusum Devi Sunderial Dugar Jai...",
+                location: "6, Ram Gopal Ghosh Road, Cossipore...",
+                imagePath: AppImagesPng.kusumCollege,
+                rating: 4.0,
+                likes: 297,
+                tags: const ["BDS"],
+              ),
+              CollegeCard(
+                name: "Haldia Institute of Dental Scienc...",
+                location: "Address City Pincode...",
+                imagePath: AppImagesPng.gouridebiCollege,
+                rating: 5.0,
+                likes: 331,
+                tags: const ["BDS"],
+              ),
+              CollegeCard(
+                name: "Bharati Vidyapeeth University...",
+                location: "Bharati Vidyapeeth Educational...",
+                imagePath: AppImagesPng.eight,
+                rating: 4.0,
+                likes: 296,
+                tags: const ["BDS"],
+              ),
+              CollegeCard(
+                name: "MGM dental college and hospita...",
+                location: "Junction of NH4 and Sion-Panvel...",
+                imagePath: AppImagesPng.nine,
+                rating: 4.0,
+                likes: 252,
+                tags: const ["BDS"],
+              ),
+            ]),
+
+            _buildHorizontalCollegeSection("Top B.Tech", [
+              CollegeCard(
+                name: "JIS College of Engineering",
+                location: "Block A, Phase III, Kalyani, Nadia...",
+                imagePath: AppImagesPng.sankaCollege,
+                rating: 5.0,
+                likes: 327,
+                tags: const ["B.TECH"],
+              ),
+              CollegeCard(
+                name: "Presidency University, Bengaluru",
+                location: "Itgalpura, Yelahanka, Bangalore",
+                imagePath: AppImagesPng.cl2,
+                rating: 4.8,
+                likes: 168,
+                tags: const ["BBA", "B.TECH"],
+              ),
+              CollegeCard(
+                name: "Dr. D. Y. Patil Vidyapeeth, Pune",
+                location: "Sant Tukaram Nagar, Pimpri Colony...",
+                imagePath: AppImagesPng.cl3,
+                rating: 5.0,
+                likes: 199,
+                tags: const ["TECH", "MBA", "PGDM"],
+              ),
+              CollegeCard(
+                name: "Christ University, Bangalore",
+                location: "Dharmaram College Post, Hosur Roa...",
+                imagePath: AppImagesPng.santiniketanCollege,
+                rating: 4.0,
+                likes: 346,
+                tags: const ["BBA", "BCA", "B.TECH"],
+              ),
+            ]),
+
             SizedBox(height: AppSize.height(0.05)),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildHorizontalCollegeSection(String title, List<Widget> children) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: AppSize.width(0.05)),
+          child: Row(
+            children: [
+              const Icon(Icons.school, color: Colors.orange, size: 24),
+              const SizedBox(width: 8),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: AppSize.height(0.022),
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green[800],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: AppSize.height(0.015)),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          padding: EdgeInsets.only(left: AppSize.width(0.05), bottom: 10),
+          child: Row(
+            children: children,
+          ),
+        ),
+        SizedBox(height: AppSize.height(0.02)),
+      ],
     );
   }
 
