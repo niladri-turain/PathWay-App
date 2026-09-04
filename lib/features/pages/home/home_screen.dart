@@ -6,6 +6,7 @@ import '../../../widgets/explore_card.dart';
 import '../../../widgets/item_card.dart';
 import '../../../widgets/college_card.dart';
 import '../../../widgets/service_card.dart';
+import '../../../widgets/partner_card.dart';
 import '../../../core/routes/app_navigation.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -432,6 +433,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             SizedBox(height: AppSize.height(0.03)),
             _buildOurServices(),
+            _buildOurCollaboration(),
           ],
         ),
       ),
@@ -539,6 +541,57 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+
+  Widget _buildOurCollaboration() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: AppSize.width(0.05)),
+          child: Row(
+            children: [
+              const Icon(Icons.school, color: Colors.orange, size: 24),
+              const SizedBox(width: 8),
+              Text(
+                "Our Collaboration",
+                style: TextStyle(
+                  fontSize: AppSize.height(0.022),
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green[800],
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 15),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          padding: EdgeInsets.only(left: AppSize.width(0.05), bottom: 10),
+          child: const Row(
+            children: [
+              PartnerCard(
+                imagePath: AppImagesPng.co1,
+                title: "Ramaiah Univ.",
+              ),
+              PartnerCard(
+                imagePath: AppImagesPng.co2,
+                title: "Manipal Univ.",
+              ),
+              PartnerCard(
+                imagePath: AppImagesPng.co3,
+                title: "VIT University",
+              ),
+              PartnerCard(
+                imagePath: AppImagesPng.co4,
+                title: "SRM University",
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 20),
+      ],
+    );
+  }
 
   Widget _buildCategoryCard(String title) {
     return GestureDetector(

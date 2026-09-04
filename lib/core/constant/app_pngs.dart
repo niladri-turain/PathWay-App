@@ -42,6 +42,11 @@ class AppImagesPng {
   static const email = "assets/images/email.png";
   static const fb = "assets/images/fb.png";
   static const applogo = "assets/images/applogo.png";
+  static const co1 = "assets/images/co1.png";
+  static const co2 = "assets/images/co2.png";
+  static const co3 = "assets/images/co3.png";
+  static const co4 = "assets/images/co4.png";
+
 
   
 }
