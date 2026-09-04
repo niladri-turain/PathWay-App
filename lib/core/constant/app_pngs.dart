@@ -46,7 +46,16 @@ class AppImagesPng {
   static const co2 = "assets/images/co2.png";
   static const co3 = "assets/images/co3.png";
   static const co4 = "assets/images/co4.png";
-
+  static const s1 = "assets/images/s1.png";
+  static const s2 = "assets/images/s1.png";
+  static const s4 = "assets/images/s1.png";
+  static const s3 = "assets/images/s1.png";
+  static const admission = "assets/images/admission.png";
+  static const career = "assets/images/career.png";
+  static const newattendance = "assets/images/newattendance.png";
+  static const placementnew = "assets/images/placementnew.png";
+  static const loansnew = "assets/images/loansnew.png";
+  static const ssss = "assets/images/ssss.png";
 
   
 }

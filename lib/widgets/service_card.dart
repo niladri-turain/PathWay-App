@@ -50,7 +50,7 @@ class ServiceCard extends StatelessWidget {
                 ),
                 child: Image.asset(
                   imagePath,
-                  fit: BoxFit.contain,
+                  fit: BoxFit.fill,
                 ),
               ),
               const SizedBox(width: 16),

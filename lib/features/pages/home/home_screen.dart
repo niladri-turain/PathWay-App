@@ -8,6 +8,8 @@ import '../../../widgets/college_card.dart';
 import '../../../widgets/service_card.dart';
 import '../../../widgets/partner_card.dart';
 import '../../../core/routes/app_navigation.dart';
+import '../services/service_details_screen.dart';
+import '../../../data/models/service_detail_item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -500,40 +502,210 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           const SizedBox(height: 20),
-          const ServiceCard(
+          ServiceCard(
             title: "Admission Guidance",
             description:
                 "We offer comprehensive admission guidance to help you make informed decisions about your career path.",
-            imagePath: AppImagesPng.cl1,
-            themeColor: Color(0xFFE53935),
+            imagePath: AppImagesPng.newattendance,
+            themeColor: const Color(0xFF1E88E5),
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.serviceDetails, arguments: {
+                'imagePath': AppImagesPng.newattendance,
+                'themeColor': const Color(0xFF1E88E5),
+                'buttonText': "Get Guidance",
+                'features': [
+                  ServiceDetailItem(
+                    title: "University & Course Selection",
+                    description: "Find the right fit for your goals",
+                    icon: Icons.school,
+                  ),
+                  ServiceDetailItem(
+                    title: "Application Support",
+                    description: "Guidance at every step",
+                    icon: Icons.description,
+                  ),
+                  ServiceDetailItem(
+                    title: "Document Assistance",
+                    description: "Help with documentation",
+                    icon: Icons.assignment,
+                  ),
+                  ServiceDetailItem(
+                    title: "Important Deadlines",
+                    description: "Stay on track",
+                    icon: Icons.calendar_today,
+                  ),
+                  ServiceDetailItem(
+                    title: "Expert Advice",
+                    description: "Get insights from education experts",
+                    icon: Icons.people,
+                  ),
+                ],
+              });
+            },
           ),
-          const ServiceCard(
+          ServiceCard(
             title: "Career Counselling",
             description:
                 "Get expert career counselling to help you choose the right path for a brighter future.",
-            imagePath: AppImagesPng.cl2,
-            themeColor: Color(0xFF43A047),
+            imagePath: AppImagesPng.career,
+            themeColor: const Color(0xFF43A047),
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.serviceDetails, arguments: {
+                'imagePath': AppImagesPng.career,
+                'themeColor': const Color(0xFF43A047),
+                'buttonText': "Book a Counselling Session",
+                'features': [
+                  ServiceDetailItem(
+                    title: "Personalized Career Guidance",
+                    description: "Based on your interests & aptitude",
+                    icon: Icons.track_changes,
+                  ),
+                  ServiceDetailItem(
+                    title: "Career Path Exploration",
+                    description: "Explore diverse industry opportunities",
+                    icon: Icons.explore,
+                  ),
+                  ServiceDetailItem(
+                    title: "One-to-One Counselling",
+                    description: "With experienced mentors",
+                    icon: Icons.groups,
+                  ),
+                  ServiceDetailItem(
+                    title: "Skill Development Advice",
+                    description: "Enhance your career readiness",
+                    icon: Icons.trending_up,
+                  ),
+                  ServiceDetailItem(
+                    title: "Future Job Trends",
+                    description: "Stay ahead with market insights",
+                    icon: Icons.tips_and_updates,
+                  ),
+                ],
+              });
+            },
           ),
-          const ServiceCard(
+          ServiceCard(
             title: "Education Scholarship",
             description:
                 "Embark on your journey to success with our higher education scholarship program.",
-            imagePath: AppImagesPng.mba,
-            themeColor: Color(0xFF1E88E5),
+            imagePath: AppImagesPng.ssss,
+            themeColor: const Color(0xFF1E88E5),
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.serviceDetails, arguments: {
+                'imagePath': AppImagesPng.ssss,
+                'themeColor': const Color(0xFF1E88E5),
+                'buttonText': "Explore Scholarships",
+                'features': [
+                  ServiceDetailItem(
+                    title: "Scholarship Opportunities",
+                    description: "Find scholarships that match you",
+                    icon: Icons.workspace_premium,
+                  ),
+                  ServiceDetailItem(
+                    title: "Eligibility Guidance",
+                    description: "Know the requirements",
+                    icon: Icons.verified_user,
+                  ),
+                  ServiceDetailItem(
+                    title: "Application Support",
+                    description: "Step-by-step assistance",
+                    icon: Icons.description,
+                  ),
+                  ServiceDetailItem(
+                    title: "Financial Planning",
+                    description: "Plan your education with confidence",
+                    icon: Icons.account_balance_wallet,
+                  ),
+                  ServiceDetailItem(
+                    title: "Expert Assistance",
+                    description: "Get help from our scholarship experts",
+                    icon: Icons.support_agent,
+                  ),
+                ],
+              });
+            },
           ),
-          const ServiceCard(
+          ServiceCard(
             title: "Student Education Loan",
             description:
                 "We simplify the process of securing a bank loan for education. Our loan assistance services work with reputed organizations.",
-            imagePath: AppImagesPng.iqCollege,
-            themeColor: Color(0xFFFB8C00),
+            imagePath: AppImagesPng.loansnew,
+            themeColor: const Color(0xFFFB8C00),
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.serviceDetails, arguments: {
+                'imagePath': AppImagesPng.loansnew,
+                'themeColor': const Color(0xFFFB8C00),
+                'buttonText': "Apply for Education Loan",
+                'features': [
+                  ServiceDetailItem(
+                    title: "Loan Guidance",
+                    description: "Get information about education loans",
+                    icon: Icons.info,
+                  ),
+                  ServiceDetailItem(
+                    title: "Tie-ups with Reputed Banks",
+                    description: "Access exclusive loan options",
+                    icon: Icons.account_balance,
+                  ),
+                  ServiceDetailItem(
+                    title: "Application Support",
+                    description: "Assistance with documentation",
+                    icon: Icons.description,
+                  ),
+                  ServiceDetailItem(
+                    title: "Repayment Planning",
+                    description: "Plan your finances better",
+                    icon: Icons.payments,
+                  ),
+                  ServiceDetailItem(
+                    title: "Expert Consultation",
+                    description: "Get help from financial experts",
+                    icon: Icons.person_add,
+                  ),
+                ],
+              });
+            },
           ),
-          const ServiceCard(
+          ServiceCard(
             title: "Placement Assistance",
             description:
                 "Eliminate job placement anxiety with our comprehensive placement services. We guide you through every step of the job search process.",
-            imagePath: AppImagesPng.sankaCollege,
-            themeColor: Color(0xFF2E7D32),
+            imagePath: AppImagesPng.placementnew,
+            themeColor: const Color(0xFF2E7D32),
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.serviceDetails, arguments: {
+                'imagePath': AppImagesPng.placementnew,
+                'themeColor': const Color(0xFF2E7D32),
+                'buttonText': "Get Placement Support",
+                'features': [
+                  ServiceDetailItem(
+                    title: "Resume Building",
+                    description: "Create a professional profile",
+                    icon: Icons.contact_page,
+                  ),
+                  ServiceDetailItem(
+                    title: "Interview Preparation",
+                    description: "Mock interviews and tips",
+                    icon: Icons.record_voice_over,
+                  ),
+                  ServiceDetailItem(
+                    title: "Job Matching",
+                    description: "Find jobs that fit your skills",
+                    icon: Icons.work,
+                  ),
+                  ServiceDetailItem(
+                    title: "Industry Networking",
+                    description: "Connect with top recruiters",
+                    icon: Icons.language,
+                  ),
+                  ServiceDetailItem(
+                    title: "Career Growth Support",
+                    description: "Long-term career planning",
+                    icon: Icons.auto_graph,
+                  ),
+                ],
+              });
+            },
           ),
           const SizedBox(height: 30),
         ],
